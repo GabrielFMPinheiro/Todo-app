@@ -11,12 +11,17 @@ class Filters extends Component {
 
   render() {
     const { tasks, filterTasks, clear } = this.props;
-    const length = tasks.length;
+    const pendingTasks = tasks.reduce((acc, cur) => {
+      return cur.completed !== true ? (acc += 1) : 0;
+    }, 0);
+
     return (
       <section className="filters-container">
         <div className="">
           <p className="quantity-task">
-            {length === 1 ? `${length} item left` : `${length} items left`}
+            {pendingTasks === 1
+              ? `${pendingTasks} item left`
+              : `${pendingTasks} items left`}
           </p>
         </div>
 
