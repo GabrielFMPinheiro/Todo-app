@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/todo-app-challenge-klOCTCttO](https://www.frontendmentor.io/solutions/todo-app-challenge-klOCTCttO)
 - Live Site URL: [https://gabrielfmpinheiro.github.io/Todo-app/](https://gabrielfmpinheiro.github.io/Todo-app/)
 
 ## My process
