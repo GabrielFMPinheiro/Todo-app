@@ -13,7 +13,7 @@ class Filters extends Component {
   render() {
     const { tasks, filterTasks, clear } = this.props;
     const pendingTasks = tasks.reduce((acc, cur) => {
-      return cur.completed !== true ? (acc += 1) : 0;
+      return cur.completed !== true ? acc + 1 : acc;
     }, 0);
 
     return (
