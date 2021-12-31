@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { changeTheme } from '../redux/actions';
 
@@ -40,5 +41,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeTheme: () => dispatch(changeTheme()),
 });
+
+Header.propTypes = {
+  theme: PropTypes.string.isRequired,
+  changeTheme: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

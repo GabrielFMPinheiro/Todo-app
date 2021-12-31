@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { clearCompleted, filterTasks } from '../redux/actions';
 
@@ -73,5 +74,11 @@ const mapDispatchToProps = (dispatch) => ({
   filterTasks: (name) => dispatch(filterTasks(name)),
   clear: () => dispatch(clearCompleted()),
 });
+
+Filters.propTypes = {
+  tasks: PropTypes.array.isRequired,
+  filterTasks: PropTypes.func.isRequired,
+  clear: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filters);

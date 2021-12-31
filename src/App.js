@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ReactSortable } from 'react-sortablejs';
+import PropTypes from 'prop-types';
 
 import Filters from './components/Filters';
 import Header from './components/Header';
@@ -58,5 +59,12 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   sortTasks: (newArr) => dispatch(sortTasks(newArr)),
 });
+
+App.propTypes = {
+  theme: PropTypes.string.isRequired,
+  tasks: PropTypes.array.isRequired,
+  sortTasks: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

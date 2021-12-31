@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import check from '../images/icon-check.svg';
 import cross from '../images/icon-cross.svg';
@@ -57,5 +58,12 @@ const mapDispatchToProps = (dispatch) => ({
   removeTask: (name) => dispatch(removeTask(name)),
   completeTask: (name) => dispatch(completeTask(name)),
 });
+
+Task.propTypes = {
+  name: PropTypes.string.isRequired,
+  completed: PropTypes.bool.isRequired,
+  removeTask: PropTypes.func.isRequired,
+  completeTask: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(Task);

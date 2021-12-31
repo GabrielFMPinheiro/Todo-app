@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import check from '../images/icon-check.svg';
 
@@ -54,5 +55,9 @@ class Input extends Component {
 const mapDispatchToProps = (dispatch) => ({
   addTask: (task) => dispatch(addTask(task)),
 });
+
+Input.propTypes = {
+  addTask: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(Input);
