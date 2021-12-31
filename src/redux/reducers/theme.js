@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  theme: 'light',
+  theme: 'dark',
 };
 
 const controlTheme = (state = INITIAL_STATE, action) => {
