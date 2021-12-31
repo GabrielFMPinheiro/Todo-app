@@ -1,13 +1,83 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply ease-in-out duration-100;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .bg-body {
+    @apply min-h-screen w-screen bg-very-light-gray-lt dark:bg-very-dark-blue-dt absolute -z-30 font-josefin flex flex-col items-center;
+  }
+
+  .bg-image {
+    @apply bg-mobile-light dark:bg-mobile-dark sm:bg-desktop-light sm:dark:bg-desktop-dark bg-no-repeat bg-cover bg-center w-full h-[200px] absolute -z-10 sm:h-[300px];
+  }
+
+  .header-icon {
+    @apply h-5 sm:h-7  w-5 sm:w-7 cursor-pointer hover:rotate-[360deg] hover:duration-1000;
+  }
+
+  .header-title {
+    @apply text-[1.65rem] sm:text-[2.5rem] text-white font-bold tracking-[0.4em];
+  }
+
+  .check {
+    @apply cursor-pointer w-[1.4rem] sm:w-[1.6rem] h-[1.4rem] sm:h-[1.6rem] border-2 rounded-full relative dark:border-circle-border hover:bg-gradient-to-br from-check-linear-start to-check-linear-end hover:border-0 hover:before:bg-white hover:before:dark:bg-bg-card  before:absolute before:right-[4%] before:left-[4%] before:top-[4%] before:bottom-[4%] before:rounded-full;
+  }
+
+  .check-active {
+    @apply bg-gradient-to-br from-check-linear-start to-check-linear-end border-0;
+  }
+
+  .check-img {
+    @apply h-[0.6rem] w-[0.6rem] absolute top-[0.45rem] sm:top-2 left-[0.45rem] sm:left-2;
+  }
+
+  .input-box {
+    @apply bg-white dark:bg-bg-card flex items-center px-4 py-[0.8rem] sm:py-[1.2rem] rounded-[0.3rem] gap-3 sm:gap-6 mt-7;
+  }
+
+  .input {
+    @apply text-xs sm:text-lg placeholder:font-medium placeholder:text-gray-400 text-very-dark-grayish-blue-lt font-medium outline-none w-10/12 dark:bg-bg-card dark:placeholder:text-input-info dark:text-light-grayish-blue-lt;
+  }
+
+  .filter-container {
+    @apply absolute sm:static shadow-sm sm:shadow-none sm:bg-none rounded-[0.3rem] -bottom-16 bg-white left-0 right-0 py-[0.9rem] sm:py-0 flex justify-center items-center gap-4 dark:bg-bg-card;
+  }
+
+  .btn-filter {
+    @apply text-dark-grayish-blue-lt text-sm font-bold dark:text-dark-grayish-blue-dt hover:text-very-dark-grayish-blue-lt dark:hover:text-white;
+  }
+
+  .clear-btn {
+    @apply text-dark-grayish-blue-lt text-xs dark:text-dark-grayish-blue-dt sm:text-sm hover:text-very-dark-grayish-blue-lt dark:hover:text-white;
+  }
+
+  .active-filter {
+    @apply text-bright-blue !important;
+  }
+
+  .task-container {
+    @apply flex items-center px-4 sm:px-6 py-[0.9rem] sm:py-[1.05rem] bg-white border-b dark:border-circle-border dark:bg-bg-card;
+  }
+
+  .task {
+    @apply ml-3 text-very-dark-grayish-blue-lt text-xs sm:text-lg sm:ml-6 dark:text-light-grayish-blue-dt cursor-pointer;
+  }
+
+  .filters-container {
+    @apply flex justify-between items-center bg-white pr-4 pl-5 sm:px-6 py-[0.85rem] dark:bg-bg-card;
+  }
+
+  .quantity-task {
+    @apply text-dark-grayish-blue-lt text-xs dark:text-dark-grayish-blue-dt sm:text-sm;
+  }
+
+  .drag-drop {
+    @apply text-center mt-[6.5rem] sm:mt-12 text-sm text-dark-grayish-blue-lt dark:text-dark-grayish-blue-dt;
+  }
 }
